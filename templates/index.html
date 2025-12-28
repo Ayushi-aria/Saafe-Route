@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeRoute | Risk-Aware Optimizer</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <div id="map"></div>
+
+    <div class="overlay-container">
+        <div class="card">
+            <h1>SafeRoute AI</h1>
+            <div id="status-text" style="margin-bottom: 15px;">
+                <span class="status-badge status-safe">Optimal Path</span>
+            </div>
+            
+            <div class="metrics">
+                <div class="metric-item">
+                    <span>Total Distance</span>
+                    <span id="total-dist" class="metric-value">0 m</span>
+                </div>
+                <div class="metric-item">
+                    <span>Risk Score</span>
+                    <span id="total-risk" class="metric-value">0</span>
+                </div>
+                <div class="metric-item">
+                    <span>Stops Visited</span>
+                    <span id="nodes-visited" class="metric-value">0</span>
+                </div>
+            </div>
+
+            <div class="controls" style="margin-top: 20px;">
+                <!-- <button class="btn btn-primary" onclick="fetchRoute()">Refresh Route</button> -->
+                <button id="hazard-btn" class="btn btn-danger">Simulate Hazard</button>
+            </div>
+        </div>
+        
+        <div class="card" style="font-size: 0.8rem; color: #94a3b8;">
+            <p><strong>Instructions:</strong></p>
+            <p>1. View the optimal path in <span style="color:#4ade80">Green</span>.</p>
+            <p>2. Click 'Simulate Hazard'.</p>
+            <p>3. Click anywhere on the path to block it.</p>
+            <p>4. Watch the AI re-route in <span style="color:#f87171">Red</span>.</p>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+     
+    <!-- App JS -->
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

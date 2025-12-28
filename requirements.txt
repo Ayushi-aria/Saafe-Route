@@ -1,0 +1,6 @@
+flask
+ortools
+numpy
+matplotlib
+jupyter
+scipy
